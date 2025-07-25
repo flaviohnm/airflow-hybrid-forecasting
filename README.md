@@ -15,27 +15,29 @@ Este projeto implementa uma pipeline de MLOps robusta para treinar, avaliar e co
 - **Relatório Automatizado:** Geração automática de um relatório completo em Markdown ao final da pipeline, incluindo tabelas de métricas (MAPE, MASE), análise estatística (Teste de Friedman, Diagrama de Diferença Crítica) e gráficos de comparação de previsões.
 
 ## Estrutura do Projeto
+
+```text
 .
-├── dags/                     # Contém os ficheiros de definição da DAG do Airflow
+├── dags/
 │   └── ml_pipeline_dag.py
-├── data/                     # Armazena os dados
-│   └── raw/                  # Datasets brutos (gerados pela pipeline)
-├── logs/                     # Logs gerados pelo Airflow (ignorado pelo Git)
-├── results/                  # Resultados da pipeline (ignorado pelo Git)
+├── data/
+│   └── raw/
+├── logs/
+├── results/
 │   ├── metrics/
 │   ├── predictions/
 │   └── reports/
-├── src/                      # Código fonte da aplicação
+├── src/
 │   ├── data_loader.py
 │   ├── experiment.py
 │   ├── framework.py
 │   ├── models.py
 │   └── reporting.py
-├── .gitignore                # Ficheiros e pastas a serem ignorados pelo Git
-├── docker-compose.yaml       # Define os serviços, redes e volumes do Docker
-├── Dockerfile                # Define a imagem Docker customizada para o Airflow
-├── entrypoint.sh             # Script para iniciar o ambiente
-└── requirements.txt          # Dependências Python do projeto
+├── .gitignore
+├── docker-compose.yaml
+├── Dockerfile
+├── entrypoint.sh
+└── requirements.txt
 
 ## Configuração e Instalação
 
