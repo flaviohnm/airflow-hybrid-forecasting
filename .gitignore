@@ -1,0 +1,35 @@
+# ===================================================================
+# GITIGNORE PARA PROJETO AIRFLOW + PYTHON + DOCKER
+# ===================================================================
+
+# --- Ambiente Virtual Python ---
+# Ignora a pasta do ambiente virtual para não a enviar para o repositório
+venv/
+.venv/
+.env
+
+# --- Arquivos gerados pelo Python e IDEs ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.idea/
+.vscode/
+
+# --- Arquivos gerados pela Pipeline Airflow ---
+# Ignora os logs e todos os resultados (previsões, métricas, relatórios)
+logs/
+results/
+plugins/
+
+# --- Arquivos de Dados ---
+# Ignora os datasets baixados para manter o repositório leve
+data/
+
+# --- Arquivos do Docker ---
+# Geralmente não são necessários, mas é uma boa prática ignorá-los
+.dockerignore
+docker-compose.override.yml
+
+# --- Arquivos de Sistema Operacional ---
+.DS_Store
+Thumbs.db
