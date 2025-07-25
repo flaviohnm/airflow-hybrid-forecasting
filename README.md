@@ -38,6 +38,7 @@ Este projeto implementa uma pipeline de MLOps robusta para treinar, avaliar e co
 ├── Dockerfile
 ├── entrypoint.sh
 └── requirements.txt
+```
 
 ## Configuração e Instalação
 
