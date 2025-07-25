@@ -10,7 +10,6 @@ import seaborn as sns
 import autorank
 from typing import List
 
-# --- Funções Auxiliares ---
 
 def load_all_metrics(metrics_path: str, model_names: List[str], dataset_names: List[str]) -> pd.DataFrame:
     all_metrics = []
@@ -53,7 +52,6 @@ def generate_pd_chart(df_mape: pd.DataFrame, images_path: str): # ALTERADO: Rece
         barplot.annotate(format(p.get_height(), '.1f'), (p.get_x() + p.get_width() / 2., p.get_height()),
                        ha='center', va='center', xytext=(0, 9), textcoords='offset points')
     
-    # ALTERADO: Salva o gráfico na subpasta de imagens
     chart_path = os.path.join(images_path, 'pd_chart.png')
     plt.savefig(chart_path, bbox_inches='tight')
     plt.close()
@@ -80,7 +78,6 @@ def generate_forecast_plots(model_names: List[str], dataset_names: List[str], re
             plt.xlabel('Data', fontsize=12)
             plt.ylabel('Valores', fontsize=12)
             plt.legend()
-            # ALTERADO: Salva o gráfico na subpasta de imagens
             plot_path = os.path.join(images_path, f'forecast_plot_{ds_name}.png')
             plt.savefig(plot_path, bbox_inches='tight')
             plt.close()
@@ -95,7 +92,6 @@ def run_autorank_analysis(df_metrics: pd.DataFrame, images_path: str) -> str: # 
     try:
         result = autorank.autorank(df_metrics, alpha=0.05, verbose=False)
         autorank.plot_stats(result, allow_insignificant=True)
-        # ALTERADO: Salva o gráfico na subpasta de imagens
         cd_diagram_path = os.path.join(images_path, 'cd_diagram.png')
         plt.savefig(cd_diagram_path, bbox_inches='tight')
         plt.close()
@@ -127,7 +123,6 @@ def generate_final_report(
 ):
     reports_path = os.path.join(results_path, 'reports')
     metrics_path = os.path.join(results_path, 'metrics')
-    # ALTERADO: Criação da subpasta de imagens
     images_path = os.path.join(reports_path, 'images')
     os.makedirs(images_path, exist_ok=True)
     
